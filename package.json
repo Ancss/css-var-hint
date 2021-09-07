@@ -1,0 +1,85 @@
+{
+  "name": "css-var-hint",
+  "displayName": "css var hint",
+  "description": "Intellisense support for CSS,LESS,SCSS Variables",
+  "version": "0.1.0",
+  "keywords": [
+    "css",
+    "css3",
+    "var",
+    "variable",
+    "css variable",
+    "css var",
+    "cssvar",
+    "css-var",
+    "css-var-hint",
+    "less",
+    "less var",
+    "less variable",
+    "scss",
+    "scss var",
+    "scss variable",
+    "vue",
+    "vue variable",
+    "autocomplete",
+    "complete",
+    "intellisense"
+  ],
+  "icon": "img/icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:scss",
+    "onLanguage:vue"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "css variable hint",
+      "properties": {
+        "cssVarHint.files": {
+          "type": "array",
+          "description": "Support css, less, scss variables, variables in the file support global variable prompts in the workspace\n\r支持css、less、scss变量，文件中的变量支持工作区全局变量提示"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "postcss": "^8.3.6",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "vsce": "^1.97.0"
+  }
+}
